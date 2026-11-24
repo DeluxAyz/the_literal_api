@@ -1,6 +1,8 @@
+// lowk did some cool stuff here
 import adapter from '@sveltejs/adapter-auto';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig } from 'vite';
+import Icons from 'unplugin-icons/vite';
 
 export default defineConfig({
 	plugins: [
@@ -15,6 +17,11 @@ export default defineConfig({
 			// If your environment is not supported, or you settled on a specific environment, switch out the adapter.
 			// See https://svelte.dev/docs/kit/adapters for more information about adapters.
 			adapter: adapter()
+		}),
+
+		// to avoid Google CDN, i discovered unplug icons, and their github guide
+		Icons({
+			compiler: 'svelte',
 		})
 	]
 });
