@@ -22,5 +22,11 @@ export async function getWaterSummary() {
         // all ts in my notes, 
         return fetched_water_data;
     }
+
+    if (!literal_response.ok) {
+        // if the response is not ok, throw an error, which will be caught in the catch block of the calling function
+        // but idk if there's a separate object or method, like .catch or .reject that usually does this
+        throw new Error(`HTTP error! status: ${literal_response.status}`);
+    }
 }
 
